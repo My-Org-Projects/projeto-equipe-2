@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google'
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Projeto Equipe 2",
@@ -16,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-        <body className={inter.className}>{children}</body>
-    </html> 
-  )
+      <body className={poppins.className}>{children}</body>
+    </html>
+  );
 }
