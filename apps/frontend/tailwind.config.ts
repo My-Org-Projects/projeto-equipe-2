@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "botao-verde": "#22c55e",
+        "botao-azul": "#1d4ed8",
+        "botao-vermelho": "#EF4444",
+        "botao-preto": "#27272A",
       },
     },
   },
