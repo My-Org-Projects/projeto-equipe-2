@@ -1,12 +1,11 @@
-import React from "react";
-
 interface BotaoProps {
   children: React.ReactNode;
   cor?: "azul" | "verde" | "vermelho" | "preto";
   tipo?: "login" | "app";
+  onClick?: () => void;
 }
 
-const Botao = ({ children, cor, tipo }: BotaoProps) => {
+const Botao = ({ children, cor, tipo, onClick }: BotaoProps) => {
   const altura = tipo === "login" ? "h-[52px]" : "h-[47px]";
   const corClasse =
     cor === "azul"
@@ -28,6 +27,7 @@ const Botao = ({ children, cor, tipo }: BotaoProps) => {
   bg-botao-preto 
   font-bold
   `}
+      onClick={onClick}
     >
       {children}
     </button>
