@@ -30,4 +30,16 @@ body {
   .container {
     @apply mx-auto xl:max-w-7xl px-5;
   }
+  
+  .input {
+    @apply bg-zinc-950 px-4 py-2 rounded;
+  }
+
+  .button {
+    @apply px-4 py-2 text-white bg-zinc-700 rounded;
+  }
+
+  .button-outline {
+    @apply border border-zinc-500 text-white rounded px-4 py-2;
+  }
 }  
