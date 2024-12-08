@@ -18,11 +18,14 @@ export default function FormAuth() {
         </div>
         <CampoEmail />
         <CampoSenha />
+        <div className="flex justify-end text-sm font-normal text-[#979797] ">
+           <Link href='/alterarSenha'>Esqueceu a senha?</Link>
+        </div>
         <Botao cor="verde">Login</Botao>
         <div className="flex items-center justify-center">
           <div className="border-t border-zinc-500 flex-grow"></div>
           <span className="px-2 text-zinc-600">OU</span>
-          <div className="border-t border-zinc-500 flex-grow"></div>
+          <div className="border-t border-zinc-500 flex-grow "></div>
         </div>
         <GoogleAuth />
         <div className="flex justify-center">
