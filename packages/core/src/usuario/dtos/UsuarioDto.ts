@@ -9,7 +9,7 @@ export default class UsuarioDto {
     email: string;
   
     // Senha do usuário (geralmente não é incluída em respostas de API, mas pode ser útil para criação ou atualização)
-    senha?: string; // opcional para permitir criação ou alteração
+    senha: string; // opcional para permitir criação ou alteração
   
     // Data de criação da conta
     //criadoEm: Date;

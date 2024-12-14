@@ -5,6 +5,7 @@ import NomeCampo from "./NomeCampo";
 export interface CampoSenhaProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   onChangeText?: (s: string) => void;
+  modo: string
 }
 
 export default function CampoSenha(props: CampoSenhaProps) {
