@@ -23,7 +23,7 @@ export class UsuarioPrisma implements RepositorioUsuario {
       id: usuario.props.id,
       nome: usuario.props.nome, // Passando apenas algumas propriedades que você quer
       email: usuario.props.email, // Exemplo de outra propriedade
-      // Aqui você pode adicionar outras propriedades conforme necessário
+      senha: usuario.props.senha,
     });
     await this.prisma.usuario.upsert({
       where: { id: usuarioDto.id ?? '' },
@@ -32,9 +32,9 @@ export class UsuarioPrisma implements RepositorioUsuario {
     });
   }
 
-  //async buscarPorEmail(email: string): Promise<any> {
-  //return this.prisma.usuario.findUnique({
-  //where: { email },
-  //});
-  //}
+  async buscarPorEmail(email: string): Promise<UsuarioDto | null> {
+    return this.prisma.usuario.findUnique({
+      where: { email },
+    });
+  }
 }

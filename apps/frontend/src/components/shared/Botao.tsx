@@ -2,7 +2,7 @@ interface BotaoProps {
   children: React.ReactNode;
   cor?: "azul" | "verde" | "vermelho" | "preto";
   tipo?: "login" | "app";
-  onClick?: () => void;
+  onClick?: () => Promise<void> | void;
 }
 
 const Botao = ({ children, cor, tipo, onClick }: BotaoProps) => {
@@ -27,9 +27,9 @@ const Botao = ({ children, cor, tipo, onClick }: BotaoProps) => {
   bg-botao-preto 
   font-bold
   `}
-      onClick={onClick}
+     onClick={onClick}    
     >
-      {children}
+     {children}
     </button>
   );
 };
