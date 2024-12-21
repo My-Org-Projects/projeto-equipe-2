@@ -4,7 +4,7 @@ import NomeCampo from "./NomeCampo";
 export interface CampoEmailProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   onChangeText?: (s: string) => void;
-  modo : string;
+  modo?: string;
 }
 
 export default function CampoEmail(props: CampoEmailProps) {
