@@ -22,14 +22,14 @@ const Botao = ({ children, cor, tipo, onClick }: BotaoProps) => {
   ${corClasse}
   w-full 
   ${altura}
-  h-[52px] 
+  min-h-[52px]
   rounded-lg
   bg-botao-preto 
   font-bold
   `}
-     onClick={onClick}    
+      onClick={onClick}
     >
-     {children}
+      {children}
     </button>
   );
 };

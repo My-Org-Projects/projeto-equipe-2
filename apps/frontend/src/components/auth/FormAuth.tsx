@@ -9,23 +9,24 @@ import GoogleAuth from "./GoogleAuth";
 import Botao from "../shared/Botao";
 import useFormAuth from "@/data/hooks/useFormAuth";
 
-
 export default function FormAuth() {
-  const { email , senha, alterarEmail, alterarSenha, submeter} = useFormAuth()
+  const { email, senha, alterarEmail, alterarSenha, submeter } = useFormAuth();
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center h-screen ">
       <CaixaFormularios>
         <div className="flex flex-col items-center">
           <Logo />
           <span className="text-2xl font-bold">Entre com sua conta</span>
         </div>
-        <CampoEmail value={email} onChangeText={alterarEmail} modo="login"/>
-        <CampoSenha value={senha} onChangeText={alterarSenha} modo="login"/>
+        <CampoEmail value={email} onChangeText={alterarEmail} modo="login" />
+        <CampoSenha value={senha} onChangeText={alterarSenha} modo="login" />
         <div className="flex justify-end text-sm font-normal text-[#979797] ">
-           <Link href='/alterarSenha'>Esqueceu a senha?</Link>
-        </div>        
-        <Botao onClick = {submeter} cor="verde">Login </Botao>
+          <Link href="/alterarSenha">Esqueceu a senha?</Link>
+        </div>
+        <Botao onClick={submeter} cor="verde">
+          Login{" "}
+        </Botao>
         <div className="flex items-center justify-center">
           <div className="border-t border-zinc-500 flex-grow"></div>
           <span className="px-2 text-zinc-600">OU</span>
