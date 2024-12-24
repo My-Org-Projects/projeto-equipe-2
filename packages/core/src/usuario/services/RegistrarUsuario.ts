@@ -1,8 +1,7 @@
-
-import { ProvedorCriptografia } from "../../../dist";
 import CasoDeUso from "../../shared/services/CasoDeUso";
 import UsuarioDto from "../dtos/UsuarioDto";
 import Usuario from "../model/Usuario";
+import ProvedorCriptografia from "../provider/ProvedorCriptografia";
 import RepositorioUsuario from "../provider/RepositorioUsuario";
 
 export default class RegistrarUsuario implements CasoDeUso<UsuarioDto,void> {

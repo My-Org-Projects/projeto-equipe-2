@@ -11,11 +11,15 @@
   "dependencies": {
     "@projetoequipe2/core": "*",
     "@tabler/icons-react": "^3.22.0",
+    "js-cookie": "^3.0.5",
+    "jwt-decode": "^4.0.0",
     "next": "14.2.18",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "@types/jwt-decode": "^3.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
