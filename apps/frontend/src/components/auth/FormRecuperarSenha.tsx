@@ -11,7 +11,7 @@ const FormRecuperarSenha = () => {
         <span className="font-bold text-xl">Solicitar troca de senha</span>
       </div>
       <div className="w-[494px] h-[159px]  flex flex-col gap-7">
-        <CampoEmail />
+        <CampoEmail modo=""/>
         <Botao cor="verde">Login</Botao>
       </div>
     </div>

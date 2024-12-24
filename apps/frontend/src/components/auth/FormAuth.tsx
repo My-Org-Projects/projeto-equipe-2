@@ -8,10 +8,26 @@ import Logo from "../shared/Logo";
 import GoogleAuth from "./GoogleAuth";
 import Botao from "../shared/Botao";
 import useFormAuth from "@/data/hooks/useFormAuth";
+import Processando from "../shared/Processando";
+import { useState } from "react";
 
 
 export default function FormAuth() {
   const { email , senha, alterarEmail, alterarSenha, submeter} = useFormAuth()
+  const [loading, setLoading] = useState(false); // Track loading state
+
+  //Handle para esperar 1 segundo antes de submeter o formulário
+  const handleLoginClick = () => {
+    setLoading(true); // par amostrar o componente processando
+    setTimeout(() => {
+      submeter(); // Depois de 1 segundo, submeter o formulário
+    }, 1000); // 1-second delay
+  };
+
+  // se estiver carregando mostra o componente processando
+  if (loading) {
+    return <Processando />;
+  }
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
@@ -25,7 +41,7 @@ export default function FormAuth() {
         <div className="flex justify-end text-sm font-normal text-[#979797] ">
            <Link href='/alterarSenha'>Esqueceu a senha?</Link>
         </div>        
-        <Botao onClick = {submeter} cor="verde">Login </Botao>
+        <Botao onClick = {handleLoginClick} cor="verde">Login </Botao>
         <div className="flex items-center justify-center">
           <div className="border-t border-zinc-500 flex-grow"></div>
           <span className="px-2 text-zinc-600">OU</span>
