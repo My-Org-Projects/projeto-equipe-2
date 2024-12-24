@@ -11,7 +11,6 @@ import useFormAuth from "@/data/hooks/useFormAuth";
 import Processando from "../shared/Processando";
 import { useState } from "react";
 
-
 export default function FormAuth() {
   const { email , senha, alterarEmail, alterarSenha, submeter} = useFormAuth()
   const [loading, setLoading] = useState(false); // Track loading state
@@ -30,14 +29,14 @@ export default function FormAuth() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center h-screen ">
       <CaixaFormularios>
         <div className="flex flex-col items-center">
           <Logo />
           <span className="text-2xl font-bold">Entre com sua conta</span>
         </div>
-        <CampoEmail value={email} onChangeText={alterarEmail} modo="login"/>
-        <CampoSenha value={senha} onChangeText={alterarSenha} modo="login"/>
+        <CampoEmail value={email} onChangeText={alterarEmail} modo="login" />
+        <CampoSenha value={senha} onChangeText={alterarSenha} modo="login" />
         <div className="flex justify-end text-sm font-normal text-[#979797] ">
            <Link href='/alterarSenha'>Esqueceu a senha?</Link>
         </div>        

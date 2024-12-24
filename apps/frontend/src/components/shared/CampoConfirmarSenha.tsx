@@ -2,13 +2,15 @@ import { IconEye, IconEyeOff } from "@tabler/icons-react";
 import { useState } from "react";
 import NomeCampo from "./NomeCampo";
 
-export interface CampoSenhaProps
+export interface CampoConfirmarNovaSenhaProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   onChangeText?: (s: string) => void;
   modo?: string;
 }
 
-export default function CampoSenha(props: CampoSenhaProps) {
+export default function CampoConfirmarNovaSenha(
+  props: CampoConfirmarNovaSenhaProps
+) {
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
   function alterarMostrarSenha() {
@@ -16,7 +18,7 @@ export default function CampoSenha(props: CampoSenhaProps) {
   }
   return (
     <div>
-      <NomeCampo nome="Senha" />
+      <NomeCampo nome="Confirmar Nova Senha" />
       <div className="flex input outline-1">
         <input
           type={mostrarSenha ? "text" : "password"}
