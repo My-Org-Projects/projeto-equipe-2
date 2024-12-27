@@ -1,4 +1,6 @@
-import UsuarioDto from "../model/Usuario";
+//import UsuarioDto from "../model/Usuario";
+
+import UsuarioDto from "../dtos/UsuarioDto"
 
 export default interface RepositorioUsuario {
     salvar(usuarioDto: UsuarioDto) : Promise<void>

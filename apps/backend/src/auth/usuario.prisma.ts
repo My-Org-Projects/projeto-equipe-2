@@ -18,13 +18,13 @@ export class UsuarioPrisma implements RepositorioUsuario {
   //   });
   // }
 
-  async salvar(usuario: Usuario): Promise<void> {
-    const usuarioDto = new UsuarioDto({
-      id: usuario.props.id,
-      nome: usuario.props.nome, // Passando apenas algumas propriedades que você quer
-      email: usuario.props.email, // Exemplo de outra propriedade
-      senha: usuario.props.senha,
-    });
+  async salvar(usuarioDto: UsuarioDto): Promise<void> {
+    // const usuarioDto = new UsuarioDto({
+    //   id: usuario.id,
+    //   nome: usuario.nome, // Passando apenas algumas propriedades que você quer
+    //   email: usuario.email, // Exemplo de outra propriedade
+    //   senha: usuario.senha,
+    // });
     await this.prisma.usuario.upsert({
       where: { id: usuarioDto.id ?? '' },
       update: usuarioDto,

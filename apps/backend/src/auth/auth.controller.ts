@@ -1,5 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import {
+  EditarUsuario,
   LoginUsuario,
   RegistrarUsuario,
   UsuarioDto,
@@ -46,6 +47,17 @@ export class AuthController {
     //   email: usuarioDto.email,
     // });
     const casoDeUso = new RegistrarUsuario(this.repo, this.cripto);
+    return await casoDeUso.executar(usuarioDto);
+  }
+
+  @Post('editar')
+  //async registrar(@Body() usuarioDto: { nome: string; email: string }) {
+  async editar(@Body() usuarioDto: UsuarioDto) {
+    // const usuario = new Usuario({
+    //   nome: usuarioDto.nome,
+    //   email: usuarioDto.email,
+    // });
+    const casoDeUso = new EditarUsuario(this.repo, this.cripto);
     return await casoDeUso.executar(usuarioDto);
   }
 }
