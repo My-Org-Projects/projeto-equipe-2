@@ -13,12 +13,29 @@ content-type: application/json
 Post http://localhost:4000/auth/registrar
 content-type: application/json
 
-{
-   
-    "nome": "Rafael Lima",
-    "email": "rafaell@teste.com.br",
-    "senha": "#Senha1234!"
+{   
+     "nome": "Cristina Fernandes",
+     "email": "cris@teste.com.br",
+     "senha": "#Senha1234!"
 }
+
+# {
+   
+#     "nome": "Rafael Lima",
+#     "email": "rafaell@teste.com.br",
+#     "senha": "#Senha1234!"
+# }
+
+###
+Post http://localhost:4000/auth/editar
+content-type: application/json
+
+{   
+     "nome": "Marcela Lima",
+     "email": "marcelal@teste.com.br",
+     "senha": "#Senha1234!"
+}
+
 
 ###
 GET  http://localhost:4000/administracao

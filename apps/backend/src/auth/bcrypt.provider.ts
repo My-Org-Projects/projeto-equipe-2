@@ -1,15 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { ProvedorCriptografia } from '@projetoequipe2/core';
-import * as brypt from 'bcrypt';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class BcryptProvider implements ProvedorCriptografia {
   async criptografar(senha: string): Promise<string> {
-    const salt = await brypt.genSalt(10);
-    return brypt.hash(senha, salt);
+    const salt = await bcrypt.genSalt(10);
+    return bcrypt.hash(senha, salt);
   }
 
   async comparar(senha: string, senhaCriptografada: string): Promise<boolean> {
-    return brypt.compare(senha, senhaCriptografada);
+    return bcrypt.compare(senha, senhaCriptografada);
+   
   }
 }
