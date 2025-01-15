@@ -10,12 +10,27 @@
   },
   "dependencies": {
     "@projetoequipe2/core": "*",
+    "@radix-ui/react-dialog": "^1.1.4",
+    "@radix-ui/react-popover": "^1.1.4",
+    "@radix-ui/react-scroll-area": "^1.2.2",
+    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-toast": "^1.2.4",
     "@tabler/icons-react": "^3.22.0",
+    "@types/react-flags-select": "^1.1.6",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.0.0",
     "js-cookie": "^3.0.5",
     "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.471.1",
     "next": "14.2.18",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-flags-select": "^2.2.3",
+    "react-hook-form": "^7.54.2",
+    "react-phone-number-input": "^3.4.11",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",

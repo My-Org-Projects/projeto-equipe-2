@@ -8,9 +8,10 @@ export interface CampoSenhaProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   onChangeText?: (s: string) => void;
   modo?: string;
+  name?: string;
 }
 
-export default function CampoSenha(props: CampoSenhaProps) {
+export default function CampoConfirmarSenhaCadastro(props: CampoSenhaProps) {
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
   function alterarMostrarSenha() {
@@ -18,7 +19,7 @@ export default function CampoSenha(props: CampoSenhaProps) {
   }
   return (
     <div>
-      <NomeCampo nome={"Senha"} />
+      <NomeCampo nome={props.name ?? "Confirme sua Senha"} />
       <div className="flex input outline-1">
         <input
           type={mostrarSenha ? "text" : "password"}

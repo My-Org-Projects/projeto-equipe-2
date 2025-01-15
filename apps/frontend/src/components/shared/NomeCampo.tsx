@@ -1,9 +1,7 @@
 export interface NomeCampoProps {
-    nome: string
+  nome: string;
 }
 
-export default function NomeCampo (props: NomeCampoProps) {
-    return (
-        <span className="font-light text-sm p-1">{props.nome}</span>        
-    )
+export default function NomeCampo(props: NomeCampoProps) {
+  return <span className="font-light text-lg p-1">{props.nome}</span>;
 }

@@ -11,6 +11,5 @@ export class BcryptProvider implements ProvedorCriptografia {
 
   async comparar(senha: string, senhaCriptografada: string): Promise<boolean> {
     return bcrypt.compare(senha, senhaCriptografada);
-   
   }
 }

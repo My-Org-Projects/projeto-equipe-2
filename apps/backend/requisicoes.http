@@ -15,8 +15,9 @@ content-type: application/json
 
 {   
      "nome": "Marcia Abreu",
-     "email": "marciaabreu@teste.com.br",
-     "senha": "#Senha1234!"     
+     "email": "marciaabreu9@teste.com.br",
+     "senha": "#Senha1234!",
+     "telefone": "11999999999"
 }
 ###
 Post http://localhost:4000/auth/apagar
