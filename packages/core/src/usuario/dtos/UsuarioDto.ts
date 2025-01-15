@@ -1,16 +1,13 @@
 export default class UsuarioDto {
-    // Identificador único do usuário
-    id: string;
+    id: string;  
+   
+    nome: string;  
   
-    // Nome do usuário
-    nome: string;
-  
-    // Email do usuário
-    email: string;
-  
-    // Senha do usuário (geralmente não é incluída em respostas de API, mas pode ser útil para criação ou atualização)
-    senha: string; // opcional para permitir criação ou alteração
-  
+    email: string;  
+   
+    senha: string; 
+
+    telefone :string;
     // Data de criação da conta
     //criadoEm: Date;
   
