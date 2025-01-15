@@ -1,6 +1,6 @@
 
 import Usuario from "./model/Usuario";
-import RegistrarUsuario from "./services/EditarUsuario";
+import RegistrarUsuario from "./services/RegistrarUsuario";
 import LoginUsuario from "./services/LoginUsuario";
 import RepositorioUsuario from "./provider/RepositorioUsuario";
 import ProvedorCriptografia from "./provider/ProvedorCriptografia";

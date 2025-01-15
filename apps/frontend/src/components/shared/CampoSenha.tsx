@@ -26,8 +26,9 @@ export default function CampoSenha(props: CampoSenhaProps) {
             props.onChangeText?.(e.target.value);
           }}
           placeholder={props.placeholder}
-          className="flex-1 outline-none bg-transparent "
+          className="flex-1 outline-none bg-transparent "      
         />
+      
         {mostrarSenha ? (
           <IconEye onClick={alterarMostrarSenha} className="text-zinc-400" />
         ) : (
