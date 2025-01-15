@@ -14,10 +14,12 @@ Post http://localhost:4000/auth/registrar
 content-type: application/json
 
 {   
-     "nome": "Marcia Abreu",
-     "email": "marciaabreu@teste.com.br",
-     "senha": "#Senha1234!"     
+     "nome": "Rafael Lima",
+     "email": "rafaell@teste.com.br",
+     "senha": "#Senha1234", 
+     "telefone": "+55999997777"    
 }
+
 ###
 Post http://localhost:4000/auth/apagar
 content-type: application/json
@@ -40,9 +42,9 @@ Post http://localhost:4000/auth/editar
 content-type: application/json
 
 {   
-     "nome": "Marcia Rita Lima",
-     "email": "marciaarita@teste.com.br",
-     "senha": "#Senha1234"
+     "nome": "Marcia Abreu Lima",
+     "email": "marciaabreu@teste.com.br",
+     "senha": "#Senha1234!"
 }
 
 
