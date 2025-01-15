@@ -14,8 +14,17 @@ Post http://localhost:4000/auth/registrar
 content-type: application/json
 
 {   
-     "nome": "Cristina Fernandes",
-     "email": "cris@teste.com.br",
+     "nome": "Marcia Abreu",
+     "email": "marciaabreu@teste.com.br",
+     "senha": "#Senha1234!"     
+}
+###
+Post http://localhost:4000/auth/apagar
+content-type: application/json
+
+{   
+     "nome": "Marcia Abreu",
+     "email": "marciaabreu@teste.com.br",
      "senha": "#Senha1234!"
 }
 
@@ -31,9 +40,9 @@ Post http://localhost:4000/auth/editar
 content-type: application/json
 
 {   
-     "nome": "Marcela Lima",
-     "email": "marcelal@teste.com.br",
-     "senha": "#Senha1234!"
+     "nome": "Marcia Rita Lima",
+     "email": "marciaarita@teste.com.br",
+     "senha": "#Senha1234"
 }
 
 

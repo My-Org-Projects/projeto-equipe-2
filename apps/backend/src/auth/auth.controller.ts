@@ -46,6 +46,7 @@ export class AuthController {
     //   nome: usuarioDto.nome,
     //   email: usuarioDto.email,
     // });
+    console.log(usuarioDto)
     const casoDeUso = new RegistrarUsuario(this.repo, this.cripto);
     return await casoDeUso.executar(usuarioDto);
   }
