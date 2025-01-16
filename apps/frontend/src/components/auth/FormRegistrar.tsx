@@ -17,9 +17,12 @@ const FormRegistrar = () => {
     setEmail,
     senha,
     setSenha,
+    senhaConfirmada,
+    setSenhaConfirmada,
     telefone,
     setTelefone,
     handleSubmit,
+    erroSenha,
   } = useRegistrar();
 
   return (
@@ -34,7 +37,11 @@ const FormRegistrar = () => {
         <CampoNome value={nome} onChange={(e) => setNome(e.target.value)} />
         <CampoEmail value={email} onChange={(e) => setEmail(e.target.value)} />
         <CampoSenha value={senha} onChange={(e) => setSenha(e.target.value)} />
-        <CampoConfirmarSenhaCadastro name="Senha" />
+        <CampoConfirmarSenhaCadastro
+          erroSenha={erroSenha}
+          name="Senha"
+          onChange={(e) => setSenhaConfirmada(e.target.value)}
+        />
 
         <div className="flex flex-col mt-4">
           <PhoneInput defaultCountry="BR" onChange={(e) => setTelefone(e)} />
