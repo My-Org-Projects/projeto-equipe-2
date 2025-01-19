@@ -1,5 +1,4 @@
-export default class UsuarioDto {
-  // Identificador único do usuário
+// Identificador único do usuário
   id: string;
 
   // Nome do usuário
