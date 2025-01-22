@@ -16,6 +16,9 @@ model Usuario {
   email String @unique
   senha String
   telefone String?
+  criadoEm String
+  token String?
+  dataValidadeToken String?
 
   @@map("usuario")
 }

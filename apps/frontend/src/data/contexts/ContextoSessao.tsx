@@ -75,7 +75,11 @@ export function ProvedorSessao (props: any) {
                 id: payload.id,
                 nome: payload.nome,
                 email: payload.email,
-                senha:''
+                telefone: payload.telefone,
+                senha:'',
+                criadoEm:'',
+                token:'',
+                dataValidadeToken:'',
             }}
         } catch (e) {
             return { token: null, usuarioDto: null}
