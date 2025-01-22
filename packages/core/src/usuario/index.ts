@@ -6,6 +6,7 @@ import RepositorioUsuario from "./provider/RepositorioUsuario";
 import ProvedorCriptografia from "./provider/ProvedorCriptografia";
 import UsuarioDto from "./dtos/UsuarioDto"
 import EditarUsuario from "./services/EditarUsuario";
+import RecuperarSenha from "./services/RecuperarSenha";
 
 export type {RepositorioUsuario, ProvedorCriptografia}
-export { Usuario, UsuarioDto, RegistrarUsuario, LoginUsuario, EditarUsuario  }
+export { Usuario, UsuarioDto, RegistrarUsuario, LoginUsuario, EditarUsuario, RecuperarSenha  }

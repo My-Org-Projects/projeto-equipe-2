@@ -31,7 +31,7 @@ export default class Usuario extends Entidade<Usuario, UsuarioProps > {
         this.telefone = new Telefone(props.telefone)
         this.criadoEm = Data.create(props.criadoEm)
         this.senha = props.senha
-        this.token = Token.gerarToken()
+        this.token = null
         this.dataValidadeToken = Data.create(props.dataValidadeToken)
     }  
     
@@ -39,4 +39,8 @@ export default class Usuario extends Entidade<Usuario, UsuarioProps > {
     clone(novasProps: UsuarioProps): any {
         return super.clone(novasProps); // Retorna um objeto com valores simples
     }
+
+    obterToken ():string{
+      return  Token.gerarToken().token;      
+    }    
 }
