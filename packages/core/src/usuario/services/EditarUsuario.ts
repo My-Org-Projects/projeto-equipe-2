@@ -36,7 +36,7 @@ export default class EditarUsuario implements CasoDeUso<UsuarioDto,void> {
             senha: usuarioAlterado.props.senha,           
         }
        )
-        console.log(usuarioDto.senha)
+       // console.log(usuarioDto.senha)
         //console.log(novoUsuarioDto.nome)
         await this.repo.salvar(novoUsuarioDto);
     }
