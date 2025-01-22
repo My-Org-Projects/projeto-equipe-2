@@ -19,6 +19,7 @@ export default class RegistrarUsuario implements CasoDeUso<UsuarioDto,void> {
        
        const senhaCriptografada = await this.cripto.criptografar(usuarioDto.senha)
        const dataCriacao = new Date().toISOString(); 
+      
        const novoUsuario = new Usuario(
         {
             ...usuarioDto,
@@ -32,8 +33,8 @@ export default class RegistrarUsuario implements CasoDeUso<UsuarioDto,void> {
             ...usuarioDto,
             id: novoUsuario.props.id,
             senha: novoUsuario.props.senha, 
-            criadoEm: dataCriacao,  
-            dataValidadeToken: dataCriacao
+            criadoEm: novoUsuario.criadoEm.toISOStringSaoPaulo(),  
+            dataValidadeToken: novoUsuario.criadoEm.toISOStringSaoPaulo()
         }
        )
         

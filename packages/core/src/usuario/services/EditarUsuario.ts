@@ -14,18 +14,30 @@ export default class EditarUsuario implements CasoDeUso<UsuarioDto,void> {
        
        const usuarioExistente = await this.repo.buscarPorEmail(usuarioDto.email) 
        
+
        if (!usuarioExistente) {
         throw new Error('Usuário não existe')
        }
+       const usuario = new Usuario(usuarioExistente)
+
+       let senhaCriptografada
+       if (usuarioDto.senha != '') {
+        senhaCriptografada = await this.cripto.criptografar(usuarioDto.senha)
+       } else {
+        senhaCriptografada = usuarioExistente.senha
+       }
        
-       const senhaCriptografada = await this.cripto.criptografar(usuarioDto.senha)
        
        const usuarioAlterado = new Usuario(
         {
             id: usuarioExistente.id,
+            criadoEm: usuarioExistente.criadoEm,
             nome: usuarioDto.nome,
             email: usuarioDto.email,
-            senha: senhaCriptografada,           
+            telefone: usuarioDto.telefone,
+            token: usuarioDto.token,
+            dataValidadeToken: usuarioDto.dataValidadeToken,
+            senha: senhaCriptografada,                       
         }
        )
        const novoUsuarioDto = new UsuarioDto(
@@ -33,11 +45,13 @@ export default class EditarUsuario implements CasoDeUso<UsuarioDto,void> {
             id: usuarioAlterado.props.id,
             nome: usuarioAlterado.props.nome,
             email: usuarioAlterado.props.email,
-            senha: usuarioAlterado.props.senha,           
+            senha: usuarioAlterado.props.senha, 
+            token: usuarioAlterado.props.token,
+            dataValidadeToken: usuarioAlterado.dataValidadeToken.toISOStringSaoPaulo(),
+            criadoEm: usuarioAlterado.props.criadoEm      
         }
        )
-       // console.log(usuarioDto.senha)
-        //console.log(novoUsuarioDto.nome)
+       console.log(novoUsuarioDto.dataValidadeToken)
         await this.repo.salvar(novoUsuarioDto);
     }
 }

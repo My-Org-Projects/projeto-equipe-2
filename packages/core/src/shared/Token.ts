@@ -10,7 +10,7 @@ export default class Token {
     }
 
     static gerarToken() {
-        const caracteresValidos= 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+        const caracteresValidos= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
         let token = ''
         for (let i =0; i<6; i++) {
             const randomIndex =Math.floor(Math.random() * caracteresValidos.length)
@@ -20,7 +20,7 @@ export default class Token {
     }
 
     static isValid(token :string) {
-        const regex = /^[A-Za-z0-9]{6}$/
+        const regex = /^[A-Z0-9]{6}$/
         return regex.test(token)
     }
     

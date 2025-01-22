@@ -2,6 +2,7 @@ import { Body, Controller, Post } from '@nestjs/common';
 import {
   EditarUsuario,
   LoginUsuario,
+  RecuperarSenha,
   RegistrarUsuario,
   UsuarioDto,
 } from '@projetoequipe2/core';
@@ -45,8 +46,7 @@ export class AuthController {
     // const usuario = new Usuario({
     //   nome: usuarioDto.nome,
     //   email: usuarioDto.email,
-    // });
-    console.log(usuarioDto)
+    // });    
     const casoDeUso = new RegistrarUsuario(this.repo, this.cripto);
     return await casoDeUso.executar(usuarioDto);
   }
@@ -59,6 +59,12 @@ export class AuthController {
     //   email: usuarioDto.email,
     // });
     const casoDeUso = new EditarUsuario(this.repo, this.cripto);
+    return await casoDeUso.executar(usuarioDto);
+  }
+
+  @Post('recuperarSenha')  
+  async recuperarSenha (@Body() usuarioDto: UsuarioDto) {
+    const casoDeUso = new RecuperarSenha(this.repo, this.cripto);
     return await casoDeUso.executar(usuarioDto);
   }
 }

@@ -1,9 +1,11 @@
-import { EditarUsuario, ProvedorCriptografia } from "../../../dist";
+
 import CasoDeUso from "../../shared/services/CasoDeUso";
 import UsuarioDto from "../dtos/UsuarioDto";
 import Usuario from "../model/Usuario";
+import ProvedorCriptografia from "../provider/ProvedorCriptografia";
 import RepositorioUsuario from "../provider/RepositorioUsuario";
-import crypto from 'crypto'; // Para gerar tokens aleatórios
+import EditarUsuario from "./EditarUsuario";
+
 
 export default class RecuperarSenha implements CasoDeUso<UsuarioDto,void> { 
    constructor(
@@ -18,24 +20,20 @@ export default class RecuperarSenha implements CasoDeUso<UsuarioDto,void> {
             throw new Error('E-mail não encontrado!')
         }
         
-        const tokenTemporario = this.gerarToken()
+        const usuario = new Usuario(usuarioExistente); 
         const dataExpiracaoTokenTemporario = new Date();
-        const editarUsuario = new EditarUsuario(this.repo, this.cripto)
-
-        dataExpiracaoTokenTemporario.setMinutes(dataExpiracaoTokenTemporario.getMinutes() + 15)        
+        dataExpiracaoTokenTemporario.setMinutes(dataExpiracaoTokenTemporario.getMinutes() + 5)
+     
+        const editarUsuario = new EditarUsuario(this.repo, this.cripto)        
         
         const usuarioDtoAlterado = new UsuarioDto (
             {
                 ...usuarioExistente,
-                //tokenTemporario: usuarioDto.tokenTemporario,
-                //dataExpiradcaoTokenTemporario : usuarioDto.dataExpiracaoTokenTemporario
+                token: usuario.obterToken(),
+                dataValidadeToken : dataExpiracaoTokenTemporario.toISOString()
             }
-        )
+        )        
         
         editarUsuario.executar(usuarioDtoAlterado)
-    }   
-
-    private gerarToken(): string {
-        return crypto.randomBytes(3).toString('hex'); // Gera 6 dígitos alfanuméricos (3 bytes)
-      }
+    }    
 }
