@@ -1,11 +1,11 @@
-interface BotaoProps {
+interface BotaoProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   cor?: "azul" | "verde" | "vermelho" | "preto";
   tipo?: "login" | "app";
   onClick?: () => Promise<void> | void;
 }
 
-const Botao = ({ children, cor, tipo, onClick }: BotaoProps) => {
+const Botao = ({ children, cor, tipo, onClick, ...props }: BotaoProps) => {
   const altura = tipo === "login" ? "h-[52px]" : "h-[47px]";
   const corClasse =
     cor === "azul"
@@ -18,6 +18,7 @@ const Botao = ({ children, cor, tipo, onClick }: BotaoProps) => {
 
   return (
     <button
+      {...props}
       className={`
   ${corClasse}
   w-full 
