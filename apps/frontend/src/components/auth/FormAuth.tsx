@@ -12,7 +12,7 @@ import Processando from "../shared/Processando";
 import { useState } from "react";
 
 export default function FormAuth() {
-  const { email , senha, alterarEmail, alterarSenha, submeter} = useFormAuth()
+  const { email, senha, alterarEmail, alterarSenha, submeter } = useFormAuth();
   const [loading, setLoading] = useState(false); // Track loading state
 
   //Handle para esperar 1 segundo antes de submeter o formulário
@@ -38,9 +38,11 @@ export default function FormAuth() {
         <CampoEmail value={email} onChangeText={alterarEmail} modo="login" />
         <CampoSenha value={senha} onChangeText={alterarSenha} modo="login" />
         <div className="flex justify-end text-sm font-normal text-[#979797] ">
-           <Link href='/alterarSenha'>Esqueceu a senha?</Link>
-        </div>        
-        <Botao onClick = {handleLoginClick} cor="verde">Login </Botao>
+          <Link href="/alterarSenha">Esqueceu a senha?</Link>
+        </div>
+        <Botao onClick={handleLoginClick} cor="verde">
+          Login{" "}
+        </Botao>
         <div className="flex items-center justify-center">
           <div className="border-t border-zinc-500 flex-grow"></div>
           <span className="px-2 text-zinc-600">OU</span>
@@ -55,7 +57,7 @@ export default function FormAuth() {
                 Cadastre-se
               </span>{" "}
               <Link
-                href="/cadastro"
+                href="/registrar"
                 className="underline text-[#22C55E] text-lg font-normal"
               >
                 aqui
