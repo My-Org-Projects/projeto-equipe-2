@@ -1,4 +1,5 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Res } from '@nestjs/common';
+import { Response } from 'express';
 import {
   EditarUsuario,
   LoginUsuario,
@@ -9,12 +10,14 @@ import {
 import { UsuarioPrisma } from './usuario.prisma';
 import * as jwt from 'jsonwebtoken';
 import { BcryptProvider } from './bcrypt.provider';
+import { MailerSendProvider } from './mailerSend.provider';
 
 @Controller('auth')
 export class AuthController {
   constructor(
     private readonly repo: UsuarioPrisma,
     private readonly cripto: BcryptProvider,
+    private readonly geradorEmail: MailerSendProvider,
   ) {}
 
   // @Post('login')
@@ -63,8 +66,11 @@ export class AuthController {
   }
 
   @Post('recuperarSenha')  
-  async recuperarSenha (@Body() usuarioDto: UsuarioDto) {
-    const casoDeUso = new RecuperarSenha(this.repo, this.cripto);
-    return await casoDeUso.executar(usuarioDto);
+  async recuperarSenha (@Body() usuarioDto: UsuarioDto, @Res() res: Response) {
+    const casoDeUso = new RecuperarSenha(this.repo, this.cripto, this.geradorEmail);
+    await casoDeUso.executar(usuarioDto);
+    const resposta = res.status(201).json({ statusCode: 201, message:'E-mail enviado com sucesso'})
+    return resposta 
+
   }
 }

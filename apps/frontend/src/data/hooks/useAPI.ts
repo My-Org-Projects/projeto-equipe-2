@@ -18,6 +18,7 @@ export default function useAPI() {
     }
 
     async function httpPost(caminho: string, body: any ) {
+        console.log("Iniciando a requisição para", caminho);  // Log de entrad
         const uri = caminho.startsWith('/') ? caminho : `/${caminho}`
         const urlCompleta = `${urlBase}${uri}`
        
@@ -29,6 +30,7 @@ export default function useAPI() {
             }, 
             body: JSON.stringify(body),
         })
+      
         return extrairDados(resposta)
     }
 
@@ -36,7 +38,9 @@ export default function useAPI() {
         let  conteudo = ''
         try {
             conteudo = await resposta.text()
-            return JSON.parse(conteudo)
+            const jsonData= JSON.parse(conteudo)
+            return jsonData
+             
         } catch (e) {
             return  conteudo
         }
