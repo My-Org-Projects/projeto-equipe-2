@@ -3,14 +3,15 @@ import CasoDeUso from "../../shared/services/CasoDeUso";
 import UsuarioDto from "../dtos/UsuarioDto";
 import Usuario from "../model/Usuario";
 import ProvedorCriptografia from "../provider/ProvedorCriptografia";
+import ProvedorEmail from "../provider/ProvedorEmail";
 import RepositorioUsuario from "../provider/RepositorioUsuario";
 import EditarUsuario from "./EditarUsuario";
-
 
 export default class RecuperarSenha implements CasoDeUso<UsuarioDto,void> { 
    constructor(
            private readonly repo: RepositorioUsuario,   
-           private readonly cripto: ProvedorCriptografia              
+           private readonly cripto: ProvedorCriptografia,
+           private readonly geradorEmail: ProvedorEmail,              
     ) {}
      
     async executar(usuarioDto: UsuarioDto): Promise<any> {
@@ -34,6 +35,18 @@ export default class RecuperarSenha implements CasoDeUso<UsuarioDto,void> {
             }
         )        
         
-        editarUsuario.executar(usuarioDtoAlterado)
+        await editarUsuario.executar(usuarioDtoAlterado)
+
+        const urlNovaSenha = `http://localhost:3000/mudar-senha?token=${usuarioDtoAlterado.token}?email=${usuarioDtoAlterado.email}`
+        const assunto='Recuperação de senha Sistema S3curity' 
+        const mensagem = `
+                            Prezado ${usuarioDtoAlterado.nome},<br>
+                            Clique no link abaixo para acessar a página de recuperação de senha:<br><br>
+                            <a href="${urlNovaSenha}" target="_blank">Link Recuperação Senha</a><br><br>
+                            Atenção: a URL expirará em 5 minutos.
+                        `;
+        const email = usuarioDtoAlterado.email
+        //console.log(email)
+        await this.geradorEmail.enviarEmail(assunto,mensagem,email)
     }    
 }

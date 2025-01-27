@@ -7,7 +7,7 @@ import useFormRecuperarSenha from "@/data/hooks/useFormRecuperarSenha";
 
 
 const FormRecuperarSenha = () => {
-  const {email , alterarEmail, submeter } = useFormRecuperarSenha()
+  const {email , alterarEmail, submeter, mensagem } = useFormRecuperarSenha()
 
   return (    
     <div className="flex flex-col justify-center items-center h-screen ">
@@ -19,7 +19,14 @@ const FormRecuperarSenha = () => {
           <CampoEmail value={email} onChangeText={alterarEmail} modo="cadastro" />
           <Botao onClick={submeter} cor="verde">Login</Botao>
         </div>
+        {mensagem && (
+          <span
+            className={`font-medium text-lg ${mensagem.toLowerCase().includes('erro') ? 'text-red-400' : 'text-green-400'}`}
+          >
+            {mensagem}
+        </span>)}
       </div>
+     
     </div>
   );
 };

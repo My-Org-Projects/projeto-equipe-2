@@ -14,8 +14,8 @@ Post http://localhost:4000/auth/registrar
 content-type: application/json
 
 {   
-     "nome": "Leonardo Costa2",
-     "email": "lc2@teste.com.br",
+     "nome": "Leonardo Costa",
+     "email": "lc@teste.com.br",
      "senha": "#Senha1234", 
      "telefone": "+55999992211"    
 }
@@ -52,7 +52,7 @@ Post http://localhost:4000/auth/recuperarSenha
 content-type: application/json
 
 {        
-     "email": "rc@teste.com.br"
+     "email": "lc@teste.com.br"
 }
 
 
