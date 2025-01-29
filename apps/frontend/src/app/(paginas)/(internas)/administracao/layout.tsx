@@ -12,7 +12,7 @@ const layout = ({ children }: layoutProps) => {
       <TopMenu />
       <div className="flex bg-black">
         <LeftMenu />
-        <div className="bg-[#18181B] h-[calc(100vh-166px-45px)] flex-1 rounded-xl w-4/6 flex justify-center items-center">
+        <div className="bg-[#18181B] h-[calc(100vh-166px-45px)] flex-1 rounded-xl w-4/6 flex justify-center items-start pt-12">
           {children}
         </div>
       </div>
