@@ -25,7 +25,8 @@ export default class RegistrarUsuario implements CasoDeUso<UsuarioDto,void> {
             ...usuarioDto,
             senha: senhaCriptografada, 
             criadoEm: dataCriacao,  
-            dataValidadeToken: dataCriacao        
+            dataValidadeToken: dataCriacao,  
+            ativo:true      
         }
        )
        const novoUsuarioDto = new UsuarioDto(
@@ -34,7 +35,8 @@ export default class RegistrarUsuario implements CasoDeUso<UsuarioDto,void> {
             id: novoUsuario.props.id,
             senha: novoUsuario.props.senha, 
             criadoEm: novoUsuario.criadoEm.toISOStringSaoPaulo(),  
-            dataValidadeToken: novoUsuario.criadoEm.toISOStringSaoPaulo()
+            dataValidadeToken: novoUsuario.criadoEm.toISOStringSaoPaulo(),
+            ativo: novoUsuario.props.ativo
         }
        )
         

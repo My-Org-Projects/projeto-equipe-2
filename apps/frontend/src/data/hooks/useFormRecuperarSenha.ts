@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useAPI from "./useAPI";
-import router from "next/router";
+
 
 export default function useFormRecuperarSenha () {
     const [email, setEmail] = useState('')

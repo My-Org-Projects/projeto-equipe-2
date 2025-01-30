@@ -13,12 +13,14 @@ export interface UsuarioProps extends EntidadeProps {
     criadoEm?: string
     token?: string
     dataValidadeToken?: string
+    ativo?:boolean
 }
 
 export default class Usuario extends Entidade<Usuario, UsuarioProps > {
     readonly nome: NomePessoa
     readonly email: Email
     readonly senha: string
+    readonly ativo: boolean
     readonly telefone: Telefone
     readonly criadoEm: Data
     readonly token: Token   
@@ -30,6 +32,7 @@ export default class Usuario extends Entidade<Usuario, UsuarioProps > {
         this.email = new Email(props.email)
         this.telefone = new Telefone(props.telefone)
         this.criadoEm = Data.create(props.criadoEm)
+        this.ativo=true
         this.senha = props.senha
         this.token = null
         this.dataValidadeToken = Data.create(props.dataValidadeToken)
