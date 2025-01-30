@@ -37,7 +37,8 @@ export default class EditarUsuario implements CasoDeUso<UsuarioDto,void> {
             telefone: usuarioDto.telefone,
             token: usuarioDto.token,
             dataValidadeToken: usuarioDto.dataValidadeToken,
-            senha: senhaCriptografada,                       
+            senha: senhaCriptografada,  
+            ativo: usuarioDto.ativo                     
         }
        )
        const novoUsuarioDto = new UsuarioDto(
@@ -48,7 +49,8 @@ export default class EditarUsuario implements CasoDeUso<UsuarioDto,void> {
             senha: usuarioAlterado.props.senha, 
             token: usuarioAlterado.props.token,
             dataValidadeToken: usuarioAlterado.dataValidadeToken.toISOStringSaoPaulo(),
-            criadoEm: usuarioAlterado.props.criadoEm      
+            criadoEm: usuarioAlterado.props.criadoEm,
+            ativo: usuarioAlterado.props.ativo     
         }
        )
        console.log(novoUsuarioDto.dataValidadeToken)
