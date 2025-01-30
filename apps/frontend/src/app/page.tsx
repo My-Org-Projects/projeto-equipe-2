@@ -1,7 +1,11 @@
-export default function Landing() {
+import React from "react";
+
+const page = () => {
   return (
-    <div className="container bg-red-500">
-      Landing Page - Team Project 2 (BOXED LAYOUT IN 1280-PX)
+    <div>
+      <span>main page</span>
     </div>
   );
-}
+};
+
+export default page;
