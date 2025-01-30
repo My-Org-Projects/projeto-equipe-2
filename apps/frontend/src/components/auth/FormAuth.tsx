@@ -38,7 +38,7 @@ export default function FormAuth() {
         <CampoEmail value={email} onChangeText={alterarEmail} modo="login" />
         <CampoSenha value={senha} onChangeText={alterarSenha} modo="login" />
         <div className="flex justify-end text-sm font-normal text-[#979797] ">
-          <Link href="/alterarSenha">Esqueceu a senha?</Link>
+          <Link href="/recuperar-senha">Esqueceu a senha?</Link>
         </div>
         <Botao onClick={handleLoginClick} cor="verde">
           Login{" "}

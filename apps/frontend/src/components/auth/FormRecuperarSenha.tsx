@@ -21,7 +21,7 @@ const FormRecuperarSenha = () => {
         </div>
         {mensagem && (
           <span
-            className={`font-medium text-lg ${mensagem.toLowerCase().includes('erro') ? 'text-red-400' : 'text-green-400'}`}
+            className={`font-medium text-sm ${mensagem.toLowerCase().includes('erro') ? 'text-red-400' : 'text-green-400'}`}
           >
             {mensagem}
         </span>)}

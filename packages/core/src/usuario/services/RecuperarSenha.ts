@@ -1,4 +1,3 @@
-
 import CasoDeUso from "../../shared/services/CasoDeUso";
 import UsuarioDto from "../dtos/UsuarioDto";
 import Usuario from "../model/Usuario";
@@ -45,8 +44,7 @@ export default class RecuperarSenha implements CasoDeUso<UsuarioDto,void> {
                             <a href="${urlNovaSenha}" target="_blank">Link para formulário de alteração de senha</a><br><br>
                             Atenção: a URL expirará em 5 minutos.
                         `;
-        const email = usuarioDtoAlterado.email
-        //console.log(email)
+        const email = usuarioDtoAlterado.email      
         await this.geradorEmail.enviarEmail(assunto,mensagem,email)
     }    
 }
