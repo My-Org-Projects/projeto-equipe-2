@@ -1,6 +1,9 @@
 Get http://localhost:4000/ping
 
 ###
+Get  http://localhost:4000/auth/listarTodosUsuarios
+
+###
 Post http://localhost:4000/auth/login
 content-type: application/json
 
@@ -53,6 +56,16 @@ content-type: application/json
 
 {        
      "email": "lc@teste.com.br"
+}
+
+###
+Post http://localhost:4000/auth/alterarSenhaEsquecida
+content-type: application/json
+
+{     
+     "token": "RW942C",
+     "email": "rbateradedeus@gmail.com",
+     "senha": "#Senha12345"     
 }
 
 

@@ -37,4 +37,10 @@ export class UsuarioPrisma implements RepositorioUsuario {
       where: { email },
     });
   }
+
+  async listarTodosUsuarios(): Promise<UsuarioDto[]> {
+    const usuarios = await this.prisma.usuario.findMany();
+    return usuarios.map(usuario => new UsuarioDto(usuario));
+  }
+  
 }

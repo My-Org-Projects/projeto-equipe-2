@@ -80,6 +80,7 @@ export function ProvedorSessao (props: any) {
                 criadoEm:'',
                 token:'',
                 dataValidadeToken:'',
+                ativo:true
             }}
         } catch (e) {
             return { token: null, usuarioDto: null}

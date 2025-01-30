@@ -19,6 +19,7 @@ model Usuario {
   criadoEm          String
   token             String?
   dataValidadeToken String?
+  ativo             Boolean
 
   @@map("usuario")
 }
