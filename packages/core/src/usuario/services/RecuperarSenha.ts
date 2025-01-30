@@ -37,12 +37,12 @@ export default class RecuperarSenha implements CasoDeUso<UsuarioDto,void> {
         
         await editarUsuario.executar(usuarioDtoAlterado)
 
-        const urlNovaSenha = `http://localhost:3000/mudar-senha?token=${usuarioDtoAlterado.token}?email=${usuarioDtoAlterado.email}`
+        const urlNovaSenha = `http://localhost:3000/mudar-senha?token=${usuarioDtoAlterado.token}&email=${usuarioDtoAlterado.email}`
         const assunto='Recuperação de senha Sistema S3curity' 
         const mensagem = `
                             Prezado ${usuarioDtoAlterado.nome},<br>
-                            Clique no link abaixo para acessar a página de recuperação de senha:<br><br>
-                            <a href="${urlNovaSenha}" target="_blank">Link Recuperação Senha</a><br><br>
+                            Clique no link abaixo para acessar a página de alteração de senha:<br><br>
+                            <a href="${urlNovaSenha}" target="_blank">Link para formulário de alteração de senha</a><br><br>
                             Atenção: a URL expirará em 5 minutos.
                         `;
         const email = usuarioDtoAlterado.email

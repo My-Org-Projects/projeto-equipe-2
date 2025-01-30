@@ -28,4 +28,19 @@ export default class Data {
     public toISOStringSaoPaulo(): string {
         return this.date.toISOString().slice(0, -1); // Retorna sem 'Z', indicando que não é UTC.
     }
+
+    /**
+     * Compara a instância atual com outra Data.
+     * @param other - Outra instância de Data para comparação.
+     * @returns -1 se a instância for menor, 1 se for maior, ou 0 se forem iguais.
+     */
+    public comparar(outraData: Date): number {
+        if (this.date < outraData) {
+            return -1;
+        } else if (this.date > outraData) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 }    
