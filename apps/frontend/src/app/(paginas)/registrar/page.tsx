@@ -1,12 +1,28 @@
+"use client";
+import { useEffect, useContext } from "react";
+import { useRouter } from "next/navigation";
 import FormRegistrar from "@/components/auth/FormRegistrar";
 import CaixaFormularios from "@/components/shared/CaixaFormularios";
-import CampoNome from "@/components/shared/CampoNome";
+import ContextoSessao from "@/data/contexts/ContextoSessao";
 
-import React from "react";
+const Page = () => {
+  const router = useRouter();
+  const { carregando, token } = useContext(ContextoSessao); // Obtém o token e o carregamento do contexto
 
-const page = () => {
+  useEffect(() => {
+    if (!carregando && token) {
+      // Se o token estiver presente e carregado, redireciona para /administracao
+      router.push("/administracao");
+    }
+  }, [carregando, token, router]);
+
+  if (carregando) {
+    // Exibe uma mensagem de carregamento enquanto o estado de carregamento estiver verdadeiro
+    return <div>Carregando...</div>;
+  }
+
   return (
-    <div className="flex justify-center items-center h-screen ">
+    <div className="flex justify-center items-center h-screen">
       <CaixaFormularios>
         <FormRegistrar />
       </CaixaFormularios>
@@ -14,4 +30,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
