@@ -3,78 +3,98 @@
 O objetivo do projeto é de construir uma aplicação que realize controle de autenticação do usuário 
 O principal objetivo do projeto foi a sua construção aplicando conceitos de clean Arq
 
-## Tecnologias utilizadas?
+## Tecnologias/Frameworks utilizadas?
+- Node JS
+- React
+- NextJs
+- TypeScript
+- Tailwind css
+- Gerenciador de pacotes Yarn 
+```sh
+ **npm install -g yarn**
+```
+- MonoRepo
+- Prisma ORM
+- SLight (Banco de dados)
+
+## Dependencias do projeto?
+
+### BackEnd
+-jsonWebToken
+Controle token de autenticacação e sessão
+- bcrypt
+Criptografia de senha
+- MaileSender
+  Envio de e-mails
+   
+### FrontEnd
+- tabler (Biblioteca para ícones)
+- shadon (Utilizado no componente da bandeira para o campo de telefone do cadastro
+###Core
+- uuid
+
+##  Como executar o projeto
+Para executar o projeto é necessario
+
+###BackEnd
+- rodando na porta 4000
+- ajustar o .env.sample
+  JWT_SECRET 
+  Chave para o segredo do JWT
+  MAIL_SENDER_API_KEY
+  Chave gerada na API MAilSender (COloquei a minha chave temporaria para facilitar)
+  
+###Front End
+- Rodando na porta 3000
+- Ajustar o arquivo .env.sample com o caminho do backend
+  
+## Executando o projeto 
+Siga os passos a seguir no prompt para rodar o projeto no visual studio                                                                                     
+###Instalar as dependencias
 
 ```sh
-npx create-turbo@latest
+yarn install
+```
+## Rodar o build o projeto
+
+```sh
+yarn build
+```
+## Executar Yarn Run DEV
+```sh
+yarn build
 ```
 
-## What's inside?
+## Rodar o projeto através da pasta DIST
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
+- Descompacte a pasta _projetoequipe2.zip_ na pasta desejada
+- Abra o terminal
+- acesse a pasta _projetoequipe2_
+# Instale as dependencias
+- rode o ```shyarn build``` dentro da pasta frontend core e backend
+- rode ```shyarn add dotenv ``` na pasta backend
+- rode ```sh prisma generate``` na pasta backend
+  
+#Inicalize o backend
+```sh
+yarn dist/main
+```  
+#Inicalize o frontend
+```sh
+yarn start
 ```
 
-### Develop
+#login para testar _**leonardo@coder.com.br Senha #1234**_ ou se cadastre na plataforma
+O envio de e-mail para a recuperação está funcionando
 
-To develop all apps and packages, run the following command:
+## TODO
+Ainda faltam alguns itens para finalizar os reuisito. Mas gostaríamos principalmente que fossem avaliados em conjunto com o ue entragamos a estrutura do projeto baseado na arquitetura
+- No projeto não foi feito ainda a parte dos perfis e demais funcionalidades
+- os tratamentos de erros e obrigatoriedades
+- testes
+- Enriquecer os Objetos de valores  com as validações (Exemplo tamanho do nome do cliente, Formatação da data, etc..
+- Transforar a string Senha em Objeto de valor
+- autenticação de dois fatores
+- autenticação com o Google
 
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+  
