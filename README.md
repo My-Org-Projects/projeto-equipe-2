@@ -1,10 +1,9 @@
-# Turborepo starter
+# Projeto de autenticação e perfis de usuário
 
-This is an official starter Turborepo.
+O objetivo do projeto é de construir uma aplicação que realize controle de autenticação do usuário 
+O principal objetivo do projeto foi a sua construção aplicando conceitos de clean Arq
 
-## Using this example
-
-Run the following command:
+## Tecnologias utilizadas?
 
 ```sh
 npx create-turbo@latest
