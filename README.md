@@ -3,7 +3,7 @@
 O objetivo do projeto é de construir uma aplicação que realize controle de autenticação do usuário 
 O principal objetivo do projeto foi a sua construção aplicando conceitos de clean Arq
 
-## Tecnologias/Frameworks utilizadas?
+## Tecnologias/Frameworks utilizadas
 - Node JS
 - React
 - NextJs
