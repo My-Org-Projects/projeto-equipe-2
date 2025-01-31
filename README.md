@@ -3,7 +3,7 @@
 O objetivo do projeto é de construir uma aplicação que realize controle de autenticação do usuário 
 O principal objetivo do projeto foi a sua construção aplicando conceitos de clean Arq
 ## Download do projeto
-Você pode baixar o arquivo compiliado zip [aqui](./downloads/projetoequipe2.zip).
+Você pode baixar o arquivo compiliado zip [aqui](./projetoequipe2.zip).
 
 ## Tecnologias/Frameworks utilizadas
 - Node JS
