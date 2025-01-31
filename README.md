@@ -36,7 +36,7 @@ Criptografia de senha
 ##  Como executar o projeto
 Para executar o projeto é necessario
 
-###BackEnd
+### BackEnd
 - rodando na porta 4000
 - ajustar o .env.sample
   JWT_SECRET 
@@ -44,7 +44,7 @@ Para executar o projeto é necessario
   MAIL_SENDER_API_KEY
   Chave gerada na API MAilSender (COloquei a minha chave temporaria para facilitar)
   
-###Front End
+### Front End
 - Rodando na porta 3000
 - Ajustar o arquivo .env.sample com o caminho do backend
   
@@ -75,16 +75,17 @@ yarn build
 - rode ```shyarn add dotenv ``` na pasta backend
 - rode ```sh prisma generate``` na pasta backend
   
-#Inicalize o backend
+# Inicalize o backend
 ```sh
 yarn dist/main
 ```  
-#Inicalize o frontend
+# Inicalize o frontend
 ```sh
 yarn start
 ```
 
-#login para testar _**leonardo@coder.com.br Senha #1234**_ ou se cadastre na plataforma
+# login para testar 
+_**leonardo@coder.com.br Senha #1234**_ ou se cadastre na plataforma
 O envio de e-mail para a recuperação está funcionando
 
 ## TODO
