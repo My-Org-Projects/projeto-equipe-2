@@ -1,4 +1,5 @@
-# Projeto de autenticação e perfis de usuário
+# Projeto de autenticação e perfis de usuário 
+# Grupo CODEBUILDERS
 
 O objetivo do projeto é de construir uma aplicação que realize controle de autenticação do usuário 
 O principal objetivo do projeto foi a sua construção aplicando conceitos de clean Arq
