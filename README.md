@@ -23,7 +23,7 @@ Você pode baixar o arquivo compilado zip [aqui](https://github.com/My-Org-Proje
 ## Dependencias do projeto?
 
 ### BackEnd
--jsonWebToken
+- jsonWebToken
 Controle token de autenticacação e sessão
 - bcrypt
 Criptografia de senha
@@ -48,13 +48,14 @@ Para executar o projeto é necessario:
   MAIL_SENDER_API_KEY
   Chave gerada na API MAilSender (Coloquei a minha chave temporária para facilitar)
   
-### Front End
+### FrontEnd
 - Rodando na porta 3000
 - Ajustar o arquivo .env.sample com o caminho do backend
   
 ## Executando o projeto 
 Siga os passos a seguir no prompt para rodar o projeto no visual studio:                                                                                     
-###Instalar as dependencias
+
+### Instalar as dependencias
 
 ```sh
 yarn install
@@ -74,6 +75,7 @@ yarn run dev
 - Descompacte a pasta _projetoequipe2.zip_ na pasta desejada
 - Abra o terminal
 - Acesse a pasta _projetoequipe2_
+  
 # Instale as dependencias
 - Rode o 
 ```sh
@@ -91,16 +93,16 @@ prisma generate
 ``` 
   na pasta backend
   
-# Inicalize o backend
+# Inicalize o BackEnd
 ```sh
 yarn dist/main
 ```  
-# Inicalize o frontend
+# Inicalize o FrontEnd
 ```sh
 yarn start
 ```
 
-# login para testar 
+# Login para testar 
 _**leonardo@coder.com.br Senha #1234**_ ou se cadastre na plataforma.
 O envio de e-mail para a recuperação está funcionando.
 
