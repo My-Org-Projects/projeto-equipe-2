@@ -14,7 +14,7 @@ Você pode baixar o arquivo compiliado zip [aqui](https://github.com/My-Org-Proj
 - Tailwind css
 - Gerenciador de pacotes Yarn 
 ```sh
- **npm install -g yarn**
+   npm install -g yarn
 ```
 - MonoRepo
 - Prisma ORM
@@ -82,27 +82,31 @@ yarn run dev
       yarn build
   ```
   - Executar o FrontEnd da aplicação
+    
   ```sh
     yarn start
   ```
 - **Backend**
   Através do terminal, execute os comandos abaixo acessando a pasta backend
   - Instale a biblioteca para carregar as variáveis de ambiente do .env
+    
    ``` sh
      yarn add dotenv
    ```
   - Gerando os arquivos TypeScript e Java script para interação com banco de dados através do PRISMA
+    
   ```sh
      prisma generate
   ```
   - Executar o backend da aplicação
+    
   ```sh
     yarn dist/main
   ```  
 # Login para testar a aplicação
 _**leonardo@coder.com.br Senha #1234**_ ou se cadastre na plataforma
 
-PS: O envio de e-mail para a recuperação está funcionando mas precisa que seja informado uma chave do MAILSENDER
+PS: _O envio de e-mail para a recuperação está funcionando mas precisa que seja informado uma chave do MAILSENDER_
 
 ## TODO
 Ainda faltam alguns itens para finalizar os reuisito. Mas gostaríamos principalmente que fossem avaliados em conjunto com o ue entragamos a arquitetura do projeto
