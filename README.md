@@ -16,7 +16,7 @@ Você pode baixar o arquivo compiliado zip [aqui](https://github.com/My-Org-Proj
 ```sh
    npm install -g yarn
 ```
-- MonoRepo
+- TurboRepo (MonoRepo)
 - Prisma ORM
 - SQLight (Banco de dados)
 
