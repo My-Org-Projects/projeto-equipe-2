@@ -63,9 +63,9 @@ yarn install
 ```sh
 yarn build
 ```
-## Executar Yarn Run DEV
+## Executar em modo de desenvolvimento
 ```sh
-yarn build
+yarn run dev
 ```
 
 ## Rodar o projeto através da pasta DIST
