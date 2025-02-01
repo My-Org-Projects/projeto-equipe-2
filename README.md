@@ -36,7 +36,7 @@ Criptografia de senha
 ###Core
 - uuid
 
-##  Como executar o projeto
+## Como executar o projeto
 Para executar o projeto é necessario
 
 ### BackEnd
@@ -51,45 +51,58 @@ Para executar o projeto é necessario
 - Rodando na porta 3000
 - Ajustar o arquivo .env.sample com o caminho do backend
   
-## Executando o projeto através do Projeto completo baixado do GitHub
+### Executando o projeto através do Projeto completo baixado do GitHub
 Siga os passos abaixo para executar o projeto baixado do GitHub                                                                                  
-###Instalar as dependencias
+#### Instalar as dependencias
 
 ```sh
 yarn install
 ```
-## Rodar o build o projeto
+#### Rodar o build o projeto
 
 ```sh
 yarn build
 ```
-## Executar em modo de desenvolvimento
+#### Executar em modo de desenvolvimento
 ```sh
 yarn run dev
 ```
 
-## Rodar o projeto através da pasta DIST
+## Executar o projeto em produção (Download do .zip)
 
 - Descompacte a pasta _projetoequipe2.zip_ na pasta desejada
 - Abra o terminal
 - acesse a pasta _projetoequipe2_
-# Instale as dependencias
-- rode o ```shyarn build``` dentro da pasta frontend core e backend
-- rode ```shyarn add dotenv ``` na pasta backend
-- rode ```sh prisma generate``` na pasta backend
   
-# Inicalize o backend
-```sh
-yarn dist/main
-```  
-# Inicalize o frontend
-```sh
-yarn start
-```
-
-# login para testar 
+# Instale as dependencias
+- **Front End**
+  Através do terminal, execute os comandos abaixo na pasta frontend através do 
+  -- Para construir o projeto
+  ```sh
+      yarn build
+  ```
+  -- Executar o FrontEnd da aplicação
+  ```sh
+    yarn start
+  ```
+- **Backend**
+  Através do terminal, execute os comandos abaixo acessando a pasta backend
+  -- Instale a biblioteca para carregar as variáveis de ambiente do .env
+   ``` sh
+     yarn add dotenv
+   ```
+  -- Gerando os arquivos TypeScript e Java script para interação com banco de dados através do PRISMA
+  ```sh
+     prisma generate
+  ```
+  -- Executar o backend da aplicação
+  ```sh
+    yarn dist/main
+  ```  
+# Login para testar a aplicação
 _**leonardo@coder.com.br Senha #1234**_ ou se cadastre na plataforma
-O envio de e-mail para a recuperação está funcionando
+
+PS: O envio de e-mail para a recuperação está funcionando mas precisa que seja informado uma chave do MAILER SEND
 
 ## TODO
 Ainda faltam alguns itens para finalizar os reuisito. Mas gostaríamos principalmente que fossem avaliados em conjunto com o ue entragamos a arquitetura do projeto
