@@ -42,17 +42,17 @@ Para executar o projeto é necessario
 ### BackEnd
 - rodando na porta 4000
 - ajustar o .env.sample
-  JWT_SECRET 
+- JWT_SECRET 
   Chave para o segredo do JWT
-  MAIL_SENDER_API_KEY
-  Chave gerada na API MAilSender (COloquei a minha chave temporaria para facilitar)
+- MAIL_SENDER_API_KEY
+  Chave gerada na API MailSender
   
 ### Front End
 - Rodando na porta 3000
 - Ajustar o arquivo .env.sample com o caminho do backend
   
-## Executando o projeto 
-Siga os passos a seguir no prompt para rodar o projeto no visual studio                                                                                     
+## Executando o projeto através do Projeto completo baixado do GitHub
+Siga os passos abaixo para executar o projeto baixado do GitHub                                                                                  
 ###Instalar as dependencias
 
 ```sh
@@ -92,12 +92,18 @@ _**leonardo@coder.com.br Senha #1234**_ ou se cadastre na plataforma
 O envio de e-mail para a recuperação está funcionando
 
 ## TODO
-Ainda faltam alguns itens para finalizar os reuisito. Mas gostaríamos principalmente que fossem avaliados em conjunto com o ue entragamos a estrutura do projeto baseado na arquitetura
-- No projeto não foi feito ainda a parte dos perfis e demais funcionalidades
-- os tratamentos de erros e obrigatoriedades
-- testes
-- Enriquecer os Objetos de valores  com as validações (Exemplo tamanho do nome do cliente, Formatação da data, etc..
-- Transforar a string Senha em Objeto de valor
+Ainda faltam alguns itens para finalizar os reuisito. Mas gostaríamos principalmente que fossem avaliados em conjunto com o ue entragamos a arquitetura do projeto
+- Edição do cadastro do usuário (Edição do nome)
+- No projeto não foi feito a parte dos perfis e demais funcionalidades
+- Permissões
+- Autenticação e permissõe avançadas
+- Auditoria e relatórios
+- Forms
+  --Tratamentos dos erros retornados pelo BackEnd
+  --Obrigatoriedades no preenchimento dos campos
+- Testes
+- Enriquecer os Objetos de valores com as validações (Exemplo tamanho do nome do cliente, Formatação da data, etc..
+- Transformar a propriedade senha (String) em Objeto de valor
 - autenticação de dois fatores
 - autenticação com o Google
 
